@@ -24,7 +24,7 @@ module.exports = async (req, res, next) => {
       if (!data) {
         res.status(400).json({ error: 'Invalid user ID!' });
       }
-      next();
+      else next();
     });
   } 
   catch {
