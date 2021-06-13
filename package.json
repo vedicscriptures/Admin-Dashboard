@@ -2,9 +2,9 @@
     "name": "hidden-api",
     "version": "1.2.0",
     "description": "",
-    "main": "server.js",
+    "main": "app.js",
     "scripts": {
-        "start": "node server.js"
+        "start": "node app.js"
     },
     "repository": {
         "type": "git",
