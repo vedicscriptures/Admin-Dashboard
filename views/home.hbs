@@ -1,0 +1,48 @@
+{{#if alert}}
+<div class="alert alert-success alert-dismissible fade show" role="alert">
+  {{alert}}
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+{{/if}}
+
+<div class="row">
+  <div class="col-6">
+    <h1>Users</h1>
+  </div>
+  <div class="col-6 d-flex justify-content-end">
+    <a href="/adduser" type="button" class="btn btn-primary align-self-center">+ add user</a>
+  </div>
+</div>
+
+<table class="table table-bordered">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Key</th>
+      <th scope="col">Name</th>
+      <th scope="col">mail</th>
+      <th scope="col">pass</th>
+      <th scope="col">start</th>
+      <th scope="col">end</th>
+      <th scope="col">count</th>
+      <th scope="col" class="text-end">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each data}}
+    <tr>
+      <th scope="row">{{this._id}}</th>
+      <td>{{this.name}}</td>
+      <td>{{this.mail}}</td>
+      <td>{{this.pass}}</td>
+      <td>{{this.start}}</td>
+      <td>{{this.end}}</td>
+      <td>{{this.count}}</td>
+      <td class="text-end">
+        <a href="/edituser/{{this._id}}" type="button" class="btn btn-light btn-small"><i class="bi bi-pencil"></i>
+          Edit</a>
+        <a href="/del/{{this._id}}" type="button" class="btn btn-light btn-small"><i class="bi bi-person-x"></i> Delete</a>
+      </td>
+    </tr>
+    {{/each}}
+  </tbody>
+</table>

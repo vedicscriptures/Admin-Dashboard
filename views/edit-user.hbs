@@ -1,0 +1,57 @@
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="/">Home</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Edit User</li>
+  </ol>
+</nav>
+
+{{#if alert}}
+  <div class="alert alert-success alert-dismissible fade show" role="alert">
+    {{alert}}
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+{{/if}}
+
+{{#each data}}
+<form class="row g-3 needs-validation" method="POST" action="/edituser/{{this._id}}"> 
+    <div class="col-6">
+    <div class="form-floating mb-3">
+      <input type="text" class="form-control" id="floatingInput" value="{{this.name}}" placeholder="Name" name="name">
+      <label for="floatingInput">Name</label>
+    </div>
+  </div>
+  <div class="col-6">
+    <div class="form-floating mb-3">
+      <input type="text" class="form-control" id="floatingInput" value="{{this.pass}}" placeholder="Password" name="pass">
+      <label for="floatingInput">Password</label>
+    </div>
+  </div>
+  <div class="col-6">
+    <div class="form-floating mb-3">
+      <input type="email" class="form-control" id="floatingInput" value="{{this.mail}}" placeholder="email@email.com" name="mail">
+      <label for="floatingInput">Mail</label>
+    </div>
+  </div>
+  <div class="col-6">
+    <div class="form-floating mb-3">
+      <input type="date" class="form-control" id="floatingInput" value="{{this.start}}" placeholder="start date" name="start">
+      <label for="floatingInput">Start date</label>
+    </div>
+  </div>
+  <div class="col-6">
+    <div class="form-floating mb-3">
+      <input type="number" class="form-control" id="floatingInput" value="{{this.end}}" placeholder="end" name="end">
+      <label for="floatingInput">end in days</label>
+    </div>
+  </div>
+  <div class="col-6">
+    <div class="form-floating mb-3">
+      <input type="number" class="form-control" id="floatingInput" value="{{this.count}}" placeholder="count" name="count">
+      <label for="floatingInput">count per days</label>
+    </div>
+  </div>
+  <div class="col-12 d-grid">
+    <button class="btn btn-primary" type="submit">Submit</button>
+  </div>
+</form>
+{{/each}}
