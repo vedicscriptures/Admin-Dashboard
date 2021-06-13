@@ -8,7 +8,7 @@ const port = process.env.PORT || 80;
 
 
 // Static Files
-app.use(express.static('public'));
+//app.use(express.static('public'));
 
 // Templating Engine
 app.engine('hbs', exphbs( {extname: '.hbs' }));
