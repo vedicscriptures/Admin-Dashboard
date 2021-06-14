@@ -1,6 +1,5 @@
 // import modules of user
 const user = require('../models/user.model');
-
 function uuidv4() {
     return 'xxxxxxxxxxxxxxxxx'.replace(/[x]/g, function(c) {
       var r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);
@@ -20,7 +19,7 @@ const Routes = (app) => {
                     ), 
                     alert : req.query.alert 
                 });
-        });
+        }).sort({start:-1});
     });
 
     //edit user    
