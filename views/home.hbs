@@ -17,6 +17,7 @@
 <table class="table table-bordered">
   <thead class="thead-dark">
     <tr>
+      <th scope="col">Key</th>
       <th scope="col">Name</th>
       <th scope="col">mail</th>
       <th scope="col" class="text-end">Action</th>
@@ -25,8 +26,9 @@
   <tbody>
     {{#each data}}
     <tr>
+      <td>{{this._id}}</td>
       <td><a href="https://github.com/{{this.pass}}">{{this.pass}}</a></td>
-      <td><a href="mailto:pt7223047175@gmail.com?subject=Bhagavad%20Gita%20API%20Authentication%20key&body=Hi%20{{this.name}}%2C%0A%0Awelcome%20to%20the%20Bhagavad%20Gita%20API!%0AYour%20API%20key%3A%20{{this._id}}%0A%0AUse%20it%20as%20the%20'x-api-key'%20header%20when%20making%20any%20request%20to%20the%20API%2C%20or%20by%20adding%20as%20a%20query%20string%20parameter%20e.g.%0A'api_key%3D{{this._id}}'%0A%0AMore%20details%20on%20authentication.%0AVisit%20our%20official%20API%20Documentation.%0Adocs.bhagavadgitaapi.in%2Fapi-reference%2Fauthentication%0A%0AOr%20if%20you%20need%20any%20example%20code%2C%20or%20have%20any%20questions%20then%20checkout%20the%20forum%3A%0Ahttps%3A%2F%2Fgithub.com%2Fvedicscriptures%2Fbhagavad-gita-api%2Fdiscussions%2F3%0A%0AAll%20the%20best%2C%20Pt.%20Prashant%20Tripathi.%20https%3A%2F%2Fgithub.com%2Fptprashanttripathi%0A%0ABig%20love!">send mail</a></td>
+      <td><a href="mailto:{{this.mail}}?subject=Bhagavad%20Gita%20API%20Authentication%20key&body=Hi%20{{this.name}}%2C%0A%0Awelcome%20to%20the%20Bhagavad%20Gita%20API!%0AYour%20API%20key%3A%20{{this._id}}%0A%0AUse%20it%20as%20the%20'x-api-key'%20header%20when%20making%20any%20request%20to%20the%20API%2C%20or%20by%20adding%20as%20a%20query%20string%20parameter%20e.g.%0A'api_key%3D{{this._id}}'%0A%0AMore%20details%20on%20authentication.%0AVisit%20our%20official%20API%20Documentation.%0Adocs.bhagavadgitaapi.in%2Fapi-reference%2Fauthentication%0A%0AOr%20if%20you%20need%20any%20example%20code%2C%20or%20have%20any%20questions%20then%20checkout%20the%20forum%3A%0Ahttps%3A%2F%2Fgithub.com%2Fvedicscriptures%2Fbhagavad-gita-api%2Fdiscussions%2F3%0A%0AAll%20the%20best%2C%20Pt.%20Prashant%20Tripathi.%20https%3A%2F%2Fgithub.com%2Fptprashanttripathi%0A%0ABig%20love!">send mail</a></td>
       <td class="text-end">
         <a href="/edituser/{{this._id}}" type="button" class="btn btn-light btn-small"><i class="bi bi-pencil"></i>
           Edit</a>
