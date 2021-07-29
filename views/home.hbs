@@ -38,3 +38,21 @@
     {{/each}}
   </tbody>
 </table>
+<nav aria-label="Page navigation">
+  <ul class="pagination">
+    <li class="page-item"><a class="page-link" id="pr" href="#">Prev</a></li>
+    <li class="page-item"><a class="page-link" id="cp">1</a></li>
+    <li class="page-item"><a class="page-link" id="nx" href="#">Next</a></li>
+  </ul>
+</nav>
+<script>
+      var page = {{page}};
+      var prev = page-10;
+      var next = page+10;
+      if(prev<0){
+        prev=0;
+      }
+      document.getElementById('cp').innerHTML = page+"-"+next;
+      document.getElementById('pr').href = "/?page="+prev;
+      document.getElementById('nx').href = "/?page="+next;
+</script>

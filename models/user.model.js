@@ -3,14 +3,17 @@ const mongoose = require('mongoose');
     // User Schema
     const userSchema = new mongoose.Schema({
         _id: String,
-        name: String,
-        mail: String,
+        name: {
+            type: String,
+            unique: true
+          },
+        mail: {
+            type: String,
+            unique: true
+          },
         pass: String,
         start: String,
-        end: {
-          type: Number,
-          default: 365
-        },
+        end: Number,
         count: Number,
     });
 	
