@@ -21,7 +21,7 @@ const Routes = (app) => {
                 res.status(500).json({ error: 'Internal Server Error'});
             }
             else{
-                console.log(data);
+                //console.log(data);
                 res.render('home',{
                 data: data.map(
                     data => data.toJSON()
@@ -92,7 +92,7 @@ const Routes = (app) => {
                 });
             }
             else{
-                res.redirect('/?alert='+result._id +' User added successfully.');
+                res.status(200).json(result);
             }
         });
     }); 
