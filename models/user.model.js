@@ -15,6 +15,7 @@ const mongoose = require('mongoose');
         start: String,
         end: Number,
         count: Number,
+        status: Boolean
     });
 	
 	// user models
